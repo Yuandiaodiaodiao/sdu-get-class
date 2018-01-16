@@ -27,7 +27,7 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         zanzhux.show()
         zanzhux.exec_()
     def newversion(self):
-        webbrowser.open("https://github.com/Yuandiaodiaodiao/sdu-get-class")
+        webbrowser.open("https://github.com/Yuandiaodiaodiao/sdu-get-class/releases/tag/1.0")
     def login(self):
 
         dialx=loginmodule.LoginWindow()
