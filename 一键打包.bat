@@ -1,0 +1,1 @@
+pyinstaller -F -w  guiΩÁ√Ê.py
