@@ -2,13 +2,14 @@ import requests
 import os
 import time
 import threading
+import webbrowser
 from vars import user
 from PyQt5 import QtWidgets, QtGui
 from mainui import Ui_MainWindow
 import sys
 import loginmodule
 import monitorchoose
-
+import zanzhu
 class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(mywindow, self).__init__()
@@ -21,6 +22,12 @@ class mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
         searchx.show()
         searchx.exec_()
     # 定义槽函数
+    def zanzhu(self):
+        zanzhux = zanzhu.ZanzhuWin()
+        zanzhux.show()
+        zanzhux.exec_()
+    def newversion(self):
+        webbrowser.open("https://github.com/Yuandiaodiaodiao/sdu-get-class")
     def login(self):
 
         dialx=loginmodule.LoginWindow()

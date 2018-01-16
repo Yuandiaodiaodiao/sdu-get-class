@@ -30,6 +30,9 @@ class Monitorthread(QtCore.QThread):
             resultList=objects["resultList"]
             ans=""
             for c in resultList:
+                print(c["SJDD"])
+                if not user.schoolarea in c["SJDD"]:
+                    continue
                 strings="课余量{:<4} 课程:{:<15} 教师:{:<10}"\
                     .format(c["kyl"],c["KCM"],c["JSM"])
                 strings=str(strings)

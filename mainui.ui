@@ -40,6 +40,50 @@
      <string>TextLabel</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>110</y>
+      <width>681</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>一键赞助吃土的开发者</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>60</y>
+      <width>321</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>本软件永久免费</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>30</y>
+      <width>187</width>
+      <height>57</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>获取最新版本</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -93,8 +137,43 @@
   </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>zanzhu()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>478</x>
+     <y>113</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>newversion()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>453</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>693</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <slot>a233()</slot>
+  <slot>zanzhu()</slot>
+  <slot>newversion()</slot>
  </slots>
 </ui>

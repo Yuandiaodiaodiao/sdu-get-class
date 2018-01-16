@@ -33,6 +33,7 @@ class MonitorchooseWin(QtWidgets.QDialog, Ui_Form):
         user.upload_data=up_data
         print(up_data)
         print(kch)
+        user.schoolarea=self.comboBox_3.currentText()
         monitorx =MonitorWin()
         monitorx.show()
         monitorx.exec_()
