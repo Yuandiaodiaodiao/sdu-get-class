@@ -8,13 +8,14 @@ class LoginWindow(QtWidgets.QDialog,Ui_Dialog):
     def __init__(self):
         super(LoginWindow, self).__init__()
         self.setupUi(self)
-
-        with open('pass', 'r') as f:
-            cookiesx=f.read()
-        if len(cookiesx)>7:
-            cookiesx=cookiesx.split(",")
-            self.lineEdit.setText(cookiesx[0])
-            self.lineEdit_2.setText(cookiesx[1])
+        if os.path.exists(r'pass'):
+            print("存在")
+            with open('pass', 'r') as f:
+                cookiesx=f.read()
+            if len(cookiesx)>7:
+                cookiesx=cookiesx.split(",")
+                self.lineEdit.setText(cookiesx[0])
+                self.lineEdit_2.setText(cookiesx[1])
 
 
     def press_ok(self):

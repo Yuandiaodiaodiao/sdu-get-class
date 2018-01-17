@@ -18,7 +18,7 @@ class Monitorthread(QtCore.QThread):
             time.sleep(5)
             #self.clear_text_singal.emit()
             responsx=user.getmonitor()
-            print(responsx.text)
+            # print(responsx.text)
             if len(str(responsx))<10:
                 continue
             response=json.loads(responsx.text)
