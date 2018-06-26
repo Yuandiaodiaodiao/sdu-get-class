@@ -1,1 +1,1 @@
-pyinstaller -F -w  main.py
+pyinstaller -F   xuantool.py
