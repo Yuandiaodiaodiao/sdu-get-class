@@ -69,6 +69,7 @@ class Users(object):
         response=self.sessions.post(url,data=deldata,headers=self.login_headers)
         return response.json()
     def get_rest_num(self,response,kxh):
+        """response do_search的结果 (json对象) kxh 课序号 3位的那个"""
         result = response["result"] #成功为success
         msg = response["msg"]
         objects = response["object"]  # 课程集合
@@ -82,6 +83,7 @@ class Users(object):
                 return int(lesson["kyl"])
         return False
     def search_teacher(self,teachername):
+        """utf8输入教师名(vs有编码问题) 返回json"""
         url="http://bkjwxk.sdu.edu.cn/b/xk/xs/kcapkc/sarchjsm?keyword="+teachername+"&_=1530043816128"
         response=self.sessions.get(url)
         js = response.json()

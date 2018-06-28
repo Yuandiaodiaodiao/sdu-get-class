@@ -3,3 +3,10 @@
 
 ## 淦爆选课系统
 1.课余量报警
+https://github.com/Yuandiaodiaodiao/sdu-get-class/tree/master/keyualarm  
+2.选课库  
+https://github.com/Yuandiaodiaodiao/sdu-get-class/blob/master/v111/Users.py  
+User.py  
+选课库封装了登陆 查询 选课 退课  
+注释也比较到位了 有兴趣可以魔改  
+选课服务器有接近2s的访问频率验证
