@@ -9,15 +9,15 @@ class Users(object):
     def __init__(self):
         self.response=requests.get(Users.main_url)
         self.login_headers = {
-            'accept': "*/*",
-            'accept-encoding': "gzip, deflate",
-            'accept-language': "zh,zh-CN;q=0.9,en;q=0.8,zh-TW;q=0.7,en-US;q=0.6",
+            # 'accept': "*/*",
+            # 'accept-encoding': "gzip, deflate",
+            # 'accept-language': "zh,zh-CN;q=0.9,en;q=0.8,zh-TW;q=0.7,en-US;q=0.6",
             'connection': "keep-alive",
             'content-length': "67",
             'content-type': "application/x-www-form-urlencoded;charset=UTF-8",
-            'host': "bkjwxk.sdu.edu.cn",
-            'origin': "http://bkjwxk.sdu.edu.cn",
-            'referer': "http://bkjwxk.sdu.edu.cn/f/login",
+            # 'host': "bkjwxk.sdu.edu.cn",
+            # 'origin': "http://bkjwxk.sdu.edu.cn",
+            # 'referer': "http://bkjwxk.sdu.edu.cn/f/login",
             'user-agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36",
             'x-requested-with': "XMLHttpRequest"
 
@@ -28,10 +28,10 @@ class Users(object):
 
 
     def login(self):
-        # 执行登录
         self.login_headers["content-length"] = str(len(self.logindata))
-        response=self.sessions.post(Users.login_url,data=self.logindata,headers=self.login_headers)
+        response = self.sessions.post(self.login_url, data=self.logindata, headers=self.login_headers)
         return response.json()
+
     def debug_changeuser(self,logindata):
         self.logindata=logindata
         self.login_headers["content-length"] = str(len(self.logindata))  # post上去的data长度为contentlength
