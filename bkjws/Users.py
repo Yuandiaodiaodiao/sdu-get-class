@@ -1,4 +1,5 @@
 import v111.Users
+from bs4 import BeautifulSoup
 class Users(v111.Users.Users):
 
     def __init__(self ):  # 先继承，在重构
@@ -25,5 +26,17 @@ class Users(v111.Users.Users):
         self.login_headers["content-length"] = "1744"
         r=self.sessions.post(url="http://bkjws.sdu.edu.cn/b/cj/cjcx/xs/bjgcx",data=data,headers=self.login_headers)
         return r.json()
-
+    def paiming(self,datas):
+        self.login_headers["content-length"] =str(len(datas))
+        r=self.sessions.post(url="http://bkjws.sdu.edu.cn/f/cj/cjcx/xs/xspm",data=datas,headers=self.login_headers)
+        html=r.text
+        if "排名" not in html:
+            return ""
+        soup=BeautifulSoup(html,"lxml")
+        js=soup.find_all('td')
+        ans="选课人数:"+str(js[6]).replace("<td>","").replace("</td>","")+\
+        "排名:" + str(js[7]).replace("<td>", "").replace("</td>", "") +\
+        "最高分:" + str(js[8]).replace("<td>", "").replace("</td>", "") +\
+        "最低分:" + str(js[9]).replace("<td>", "").replace("</td>", "")
+        return ans
 
