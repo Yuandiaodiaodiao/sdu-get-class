@@ -16,3 +16,5 @@ User.py
 
 4.bkjws 本科教务库
 /master/bkjws
+
+5.我tm选爆 xuan.zip里有你一切想要的

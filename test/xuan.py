@@ -3,7 +3,13 @@ import time
 
 User = Users.Users()
 User.changeuser("201705130120", "Wangzixi")
-User.login()
+
+r = User.login()
+time.sleep(2.5)
+while "正选结束" in str(r):
+    r = User.login()
+    print(r)
+    time.sleep(2.5)
 
 
 def searc(kch):
@@ -24,21 +30,22 @@ def searc(kch):
 
 
 def tuixuan(kch, kxh, kchx, kxhx):
-    User.delclass(kch, kxh)
-    time.sleep(2)
-    User.choose(kchx, kxhx)
-
+    # User.delclass(kch, kxh)
+    # time.sleep(2)
+    r=User.choose(kchx, kxhx)
+    print(r)
 
 xk_kxh = ["sd07517120", "sd07510310", "sd07510010"]
 while True:
     for x in xk_kxh:
-        time.sleep(1)
+        time.sleep(0.1)
         kyl = searc(x)
         print("课余量=" + str(kyl))
         if int(kyl) > 0:
             for i in range(0, 3):
                 tuixuan("sd07510710", "600", x, "600")
                 time.sleep(2)
-            for i in range(100000):
-                time.sleep(10)
-                print("ojbk")
+                print("尝试选课")
+            # for i in range(100000):
+            #     time.sleep(10)
+            #     print("ojbk")

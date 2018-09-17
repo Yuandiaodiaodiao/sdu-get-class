@@ -30,6 +30,7 @@ class Users(object):
 
     def login(self):
         self.login_headers["content-length"] = str(len(self.logindata))
+        self.sessions=requests.session()
         response = self.sessions.post(self.login_url, data=self.logindata, headers=self.login_headers)
         return response.json()
 
