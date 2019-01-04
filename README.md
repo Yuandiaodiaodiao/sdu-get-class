@@ -1,7 +1,10 @@
 # sdu-get-class
-从寒假前复习高数拖到了暑假前复习高数233
+
 
 ## 淦爆选课系统
+5.自动抢课 2019.1.4  
+https://github.com/Yuandiaodiaodiao/sdu-get-class/tree/master/classKiller  
+
 1.课余量报警
 https://github.com/Yuandiaodiaodiao/sdu-get-class/tree/master/keyualarm  
 2.选课库  
@@ -17,5 +20,3 @@ https://github.com/Yuandiaodiaodiao/sdu-get-class/tree/master/findgrade
 4.bkjws 本科教务库
 https://github.com/Yuandiaodiaodiao/sdu-get-class/tree/master/bkjws
 
-5.自动抢课  
-https://github.com/Yuandiaodiaodiao/sdu-get-class/tree/master/classKiller  
