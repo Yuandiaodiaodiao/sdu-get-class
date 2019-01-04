@@ -5,3 +5,4 @@ __pycache__
 pass
 option.json
 *.spec
+test/xuan.py
