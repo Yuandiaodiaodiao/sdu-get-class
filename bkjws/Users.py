@@ -1,6 +1,6 @@
-import v111.Users
+import rubbish.v111.Users
 from bs4 import BeautifulSoup
-class Users(v111.Users.Users):
+class Users(rubbish.v111.Users.Users):
 
     def __init__(self ):  # 先继承，在重构
         super(Users, self).__init__()  # 继承父类的构造方法

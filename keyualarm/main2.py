@@ -1,8 +1,8 @@
-import v111.Users
+import rubbish.v111.Users
 import sys
 import time
 import winsound
-import v111.Tools
+import rubbish.v111.Tools
 from keyualarm.ui.main import  Ui_MainWindow
 from PyQt5 import QtWidgets,QtCore
 class searchThread(QtCore.QThread):
@@ -35,9 +35,9 @@ class mainwindow(QtWidgets.QMainWindow,Ui_MainWindow):
     def __init__(self):
         super(mainwindow, self).__init__()
         self.setupUi(self)
-        js=v111.Tools.read_cache()
+        js= rubbish.v111.Tools.read_cache()
         self.label.setOpenExternalLinks(True)
-        self.user = v111.Users.Users()
+        self.user = rubbish.v111.Users.Users()
         self.stuidtxt.setText(js["usrid"])
         self.psdtxt.setText(js["usrpsd"])
         self.kchtat.setText(js["kch"])
@@ -61,7 +61,7 @@ class mainwindow(QtWidgets.QMainWindow,Ui_MainWindow):
         kch = self.kchtat.text()
         jsm = self.jsmtxt.text()
         kxh = self.kxhtxt.text()
-        v111.Tools.save_cache(userid,userpsd,kch,jsm,kxh)
+        rubbish.v111.Tools.save_cache(userid, userpsd, kch, jsm, kxh)
 
         self.user.kxh=kxh
         self.user.changeuser(userid, userpsd)
