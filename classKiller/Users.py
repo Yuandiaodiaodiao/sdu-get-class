@@ -31,6 +31,7 @@ class Users(object):
     def login(self):
         self.login_headers["content-length"] = str(len(self.logindata))
         response = self.sessions.post(self.login_url, data=self.logindata, headers=self.login_headers)
+        print(response.json())
         return response.json()
 
     def debug_changeuser(self, logindata):
@@ -50,6 +51,8 @@ class Users(object):
         # 执行查课
         self.login_headers["content-length"] = str(len(self.searchdata))
         response = self.sessions.post(Users.searchurl, data=self.searchdata, headers=self.login_headers)
+        print(f'url{Users.searchurl} data={self.searchdata} headers={self.login_headers}')
+        print(f'resj={response.json()}')
         return response.json()
 
     def pre_search(self, kch="", jsh="", skxq="", skjc="", kkxsh="", currentPage="1"):
@@ -65,6 +68,7 @@ class Users(object):
         url = "http://bkjwxk.sdu.edu.cn/b/xk/xs/add/" + kch + "/" + kxh
         self.login_headers["content-length"] = "0"
         response = self.sessions.post(url, headers=self.login_headers)
+        print(response.json())
         return response.json()
 
     def delclass(self, kch, kxh):
@@ -112,7 +116,7 @@ class Users(object):
             jsm=self.search_teacher(jsm)
         self.pre_search(kch=kch,jsh=jsm)
         r = self.do_search()
-        #print(r)
+        print(r)
         try:
             if "object" in r:
                 if "resultList" in r["object"]:
